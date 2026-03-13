@@ -83,9 +83,9 @@ const Solutions = () => {
                       <solution.icon size={40} />
                     </Box>
                     <Typography
-                      variant='h6'
+                      variant='h3'
                       gutterBottom
-                      sx={{ fontWeight: 700 }}
+                      sx={{ fontWeight: 700, fontSize: '1.25rem' }}
                     >
                       {solution.title}
                     </Typography>

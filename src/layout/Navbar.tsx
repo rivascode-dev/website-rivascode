@@ -107,6 +107,7 @@ const Navbar = () => {
             component='a'
             href={social.href || '#'}
             target='_blank'
+            aria-label={social.label}
             sx={{
               backgroundColor: alpha('#5ce1e6', 0.1),
               '&:hover': {

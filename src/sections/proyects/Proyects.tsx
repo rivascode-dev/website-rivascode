@@ -90,7 +90,7 @@ const Proyects = () => {
                   >
                     <AppWindow size={64} />
                   </Box>
-                  <Typography variant='h4' gutterBottom>
+                  <Typography variant='h3' gutterBottom sx={{ fontSize: '1.5rem', fontWeight: 700 }}>
                     Aplicaciones
                   </Typography>
                   <Typography variant='body2' color='text.secondary'>
@@ -121,7 +121,7 @@ const Proyects = () => {
                   >
                     <Monitor size={64} />
                   </Box>
-                  <Typography variant='h4' gutterBottom>
+                  <Typography variant='h3' gutterBottom sx={{ fontSize: '1.5rem', fontWeight: 700 }}>
                     Sitios Web
                   </Typography>
                   <Typography variant='body2' color='text.secondary'>

@@ -47,6 +47,7 @@ const Footer = () => {
                 key={index}
                 color='primary'
                 component='a'
+                aria-label={social.label}
                 href={social.href || '#'}
                 target='_blank'
               >

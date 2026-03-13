@@ -9,12 +9,13 @@ export interface Project {
 }
 
 export const PROJECTS: Project[] = [
+  //apps
   {
     id: '1',
     title: 'Agente IA LogOS',
     description:
       'Agente de IA que utiliza un enfoque RAG para responder preguntas de usuarios recuperando informacion de la base de datos ',
-    image: '/assets/projects/apps/agente-logos.png',
+    image: '/assets/projects/apps/agente-logos-app.png',
     category: 'App',
     technologies: ['React', 'Hono', 'LangChain', 'LangGraph'],
     link: 'https://bylogos.io/',
@@ -40,12 +41,14 @@ export const PROJECTS: Project[] = [
     link: 'https://app-langchain-rag-html.vercel.app/',
   },
 
+  //websites
+
   {
     id: '4',
     title: 'logOS',
     description:
       'Website desarrollado para LogOS es una plataforma IIoT de vanguardia diseñada para el monitoreo y control en tiempo real en entornos industriales.  ',
-    image: '/assets/projects/websites/logos.png',
+    image: '/assets/projects/websites/logos-website.png',
     category: 'Website',
     technologies: ['Next.js', 'React', 'MUI', 'LangChain', 'RAG', 'Velite'],
     link: 'https://bylogos.io/',

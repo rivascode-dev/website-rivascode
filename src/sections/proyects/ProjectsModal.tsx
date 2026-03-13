@@ -17,6 +17,7 @@ import {
 } from '@mui/material';
 import { X, ExternalLink } from 'lucide-react';
 import { PROJECTS } from '../../data/projects';
+import Image from 'next/image';
 
 interface ProyectsModalProps {
   open: boolean;
@@ -60,17 +61,24 @@ const ProyectsModal = ({ open, onClose, category }: ProyectsModalProps) => {
           {filteredProjects.map((project) => (
             <Grid key={project.id} size={{ xs: 12, sm: 6 }}>
               <Card variant='outlined'>
-                <Box sx={{ position: 'relative' }}>
-                  <CardMedia
-                    component='img'
-                    height='240'
-                    image={project.image}
+                <Box
+                  sx={{
+                    position: 'relative',
+                    height: { xs: 177, sm: 240 },
+                    width: '100%',
+                    backgroundColor: 'grey.100',
+                  }}
+                >
+                  <Image
+                    src={project.image}
                     alt={project.title}
-                    sx={{ backgroundColor: 'grey.100' }}
+                    fill
+                    style={{ objectFit: 'cover' }}
+                    sizes='(max-width: 600px) 100vw, 400px'
                   />
                 </Box>
                 <CardContent>
-                  <Typography gutterBottom variant='h6' component='div'>
+                  <Typography gutterBottom variant='h3' component='div' sx={{ fontSize: '1.25rem', fontWeight: 700 }}>
                     {project.title}
                   </Typography>
                   <Typography
