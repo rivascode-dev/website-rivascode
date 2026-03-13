@@ -15,14 +15,14 @@ interface NetworkBackgroundProps {
 }
 
 const NetworkBackground: React.FC<NetworkBackgroundProps> = ({
-  particleCount = 180, //  total de partículas
-  particleSize = 3.5, // Tamaño de partículas
-  particleColor = 'rgba(0, 217, 255, 0.5)', // Color partículas
-  lineColor = 'rgba(0, 217, 255, 0.5)', // Color líneas
-  connectionDistance = 150, // Distancia de conexión
-  moveSpeed = 1, // Velocidad de movimiento
-  interactive = true, // Interacción activada
-  mouseRadius = 150, // Radio de acción del mouse
+  particleCount, // Se manejará dinámicamente si no se provee
+  particleSize = 3.5,
+  particleColor = 'rgba(0, 217, 255, 0.5)',
+  lineColor = 'rgba(0, 217, 255, 0.5)',
+  connectionDistance = 150,
+  moveSpeed = 1,
+  interactive = true,
+  mouseRadius = 150,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particles = useRef<any[]>([]);
@@ -38,19 +38,22 @@ const NetworkBackground: React.FC<NetworkBackgroundProps> = ({
     let animationFrameId: number;
 
     const handleResize = () => {
-      // Usar el tamaño real del elemento en el DOM para la resolución interna
       canvas.width = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
+      
+      // Ajustar cantidad de partículas según el ancho de pantalla
+      const isMobile = window.innerWidth < 600;
+      const count = particleCount || (isMobile ? 50 : 150);
+      const dist = isMobile ? 100 : connectionDistance;
 
-      // Solo inicializar si no hay partículas o si cambió el tamaño significativamente
-      if (particles.current.length === 0) {
-        initParticles();
+      if (particles.current.length === 0 || particles.current.length !== count) {
+        initParticles(count);
       }
     };
 
-    const initParticles = () => {
+    const initParticles = (count: number) => {
       particles.current = [];
-      for (let i = 0; i < particleCount; i++) {
+      for (let i = 0; i < count; i++) {
         particles.current.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
@@ -117,18 +120,21 @@ const NetworkBackground: React.FC<NetworkBackgroundProps> = ({
         ctx.fill();
 
         // Dibujar conexiones
+        const isMobile = window.innerWidth < 600;
+        const currentDist = isMobile ? 100 : connectionDistance;
+
         for (let j = i + 1; j < particles.current.length; j++) {
           const p2 = particles.current[j];
           const dx = p.x - p2.x;
           const dy = p.y - p2.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
+          const d = Math.sqrt(dx * dx + dy * dy);
 
-          if (dist < connectionDistance) {
+          if (d < currentDist) {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
             ctx.strokeStyle = lineColor;
-            ctx.lineWidth = (1 - dist / connectionDistance) * 0.5;
+            ctx.lineWidth = (1 - d / currentDist) * 0.5;
             ctx.stroke();
           }
         }
