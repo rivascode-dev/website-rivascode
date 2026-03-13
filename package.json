@@ -35,8 +35,9 @@
     "typescript": "^5"
   },
   "browserslist": [
-    "last 2 versions",
+    "last 3 versions",
     "not dead",
-    "not ie 11"
+    "not ie 11",
+    "fully supports es6-module"
   ]
 }

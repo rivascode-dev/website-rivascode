@@ -40,11 +40,9 @@ const NetworkBackground: React.FC<NetworkBackgroundProps> = ({
     const handleResize = () => {
       canvas.width = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
-      
-      // Ajustar cantidad de partículas según el ancho de pantalla
+
       const isMobile = window.innerWidth < 600;
-      const count = particleCount || (isMobile ? 50 : 150);
-      const dist = isMobile ? 100 : connectionDistance;
+      const count = particleCount || (isMobile ? 80 : 180);
 
       if (particles.current.length === 0 || particles.current.length !== count) {
         initParticles(count);
@@ -73,6 +71,7 @@ const NetworkBackground: React.FC<NetworkBackgroundProps> = ({
     };
 
     const draw = () => {
+      if (!ctx || !canvas) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       particles.current.forEach((p, i) => {
@@ -120,21 +119,18 @@ const NetworkBackground: React.FC<NetworkBackgroundProps> = ({
         ctx.fill();
 
         // Dibujar conexiones
-        const isMobile = window.innerWidth < 600;
-        const currentDist = isMobile ? 100 : connectionDistance;
-
         for (let j = i + 1; j < particles.current.length; j++) {
           const p2 = particles.current[j];
           const dx = p.x - p2.x;
           const dy = p.y - p2.y;
-          const d = Math.sqrt(dx * dx + dy * dy);
+          const dist = Math.sqrt(dx * dx + dy * dy);
 
-          if (d < currentDist) {
+          if (dist < connectionDistance) {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
             ctx.strokeStyle = lineColor;
-            ctx.lineWidth = (1 - d / currentDist) * 0.5;
+            ctx.lineWidth = (1 - dist / connectionDistance) * 0.5;
             ctx.stroke();
           }
         }
