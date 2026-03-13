@@ -11,7 +11,7 @@ import {
   Stack,
 } from '@mui/material';
 import { motion } from 'framer-motion';
-import { technologies } from '../../data/technologies';
+import { TECHNOLOGIES } from '../../data/technologies';
 import { brandColor, brandGradient } from '../../theme/theme';
 
 // Import icons as requested
@@ -86,7 +86,7 @@ const Technologies = () => {
         </Stack>
 
         <Grid container spacing={4} justifyContent='center'>
-          {technologies.map((tech, index) => {
+          {TECHNOLOGIES.map((tech, index) => {
             const techData = iconMap[tech.icon || tech.name.toLowerCase()];
             return (
               <Grid key={tech.name} size={{ xs: 4, sm: 3, md: 1 }}>

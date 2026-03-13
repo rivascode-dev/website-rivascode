@@ -1,6 +1,16 @@
-import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
+import { Github, Linkedin, Mail, MapPin, type LucideIcon } from 'lucide-react';
 
-const CONTACT_DATA = [
+export interface ContactItem {
+  id: string;
+  label: string;
+  href?: string;
+  value?: string;
+  icon: LucideIcon;
+  isSocial?: boolean;
+  isInfo?: boolean;
+}
+
+export const CONTACT_DATA: ContactItem[] = [
   {
     id: 'github',
     label: 'Github',
@@ -33,5 +43,5 @@ const CONTACT_DATA = [
   },
 ];
 
-export const socialLinks = CONTACT_DATA.filter((item) => item.isSocial);
-export const contactInfo = CONTACT_DATA.filter((item) => item.isInfo);
+export const SOCIAL_LINKS = CONTACT_DATA.filter((item) => item.isSocial);
+export const CONTACT_INFO = CONTACT_DATA.filter((item) => item.isInfo);

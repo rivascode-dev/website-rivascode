@@ -1,7 +1,7 @@
 'use client';
 
-import { Send, MapPin } from 'lucide-react';
-import React, { useState } from 'react';
+import { Send } from 'lucide-react';
+import { useState } from 'react';
 import {
   Container,
   Typography,
@@ -13,6 +13,7 @@ import {
   Card,
   Alert,
   CircularProgress,
+  IconButton,
 } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import { useForm } from 'react-hook-form';
@@ -20,7 +21,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { brandColor, brandGradient } from '../../theme/theme';
 import { emailSchema, type EmailFormValues } from '@/schemas/emailSchema';
 import { sendEmail } from '@/actions/sendEmail';
-import { socialLinks, contactInfo, contactData } from '@/data/contact';
+import { SOCIAL_LINKS, CONTACT_INFO } from '@/data/contact';
 
 const Contact = () => {
   const [alertInfo, setAlertInfo] = useState<{
@@ -39,6 +40,7 @@ const Contact = () => {
       nombre: '',
       email: '',
       mensaje: '',
+      fax: '',
     },
   });
 
@@ -119,8 +121,13 @@ const Contact = () => {
               <Typography variant='h4' sx={{ mb: 2 }}>
                 Información de Contacto
               </Typography>
-              {contactInfo.map((info) => (
-                <Stack key={info.id} direction='row' spacing={2} alignItems='center'>
+              {CONTACT_INFO.map((info) => (
+                <Stack
+                  key={info.id}
+                  direction='row'
+                  spacing={2}
+                  alignItems='center'
+                >
                   <Box
                     sx={{
                       p: 1.5,
@@ -142,12 +149,13 @@ const Contact = () => {
                 </Stack>
               ))}
 
-              <Stack direction='row' spacing={3} sx={{ pt: 2 }}>
-                {socialLinks.map((social, index) => (
+              <Stack direction='row' spacing={2}>
+                {SOCIAL_LINKS.map((social, index) => (
                   <IconButton
                     key={index}
                     color='primary'
-                    href={social.href}
+                    component='a'
+                    href={social.href || '#'}
                     target='_blank'
                     sx={{
                       backgroundColor: alpha('#5ce1e6', 0.1),
@@ -157,7 +165,7 @@ const Contact = () => {
                       },
                     }}
                   >
-                    <social.icon size={24} />
+                    <social.icon size={22} />
                   </IconButton>
                 ))}
               </Stack>
@@ -202,6 +210,20 @@ const Contact = () => {
                       />
                     </Grid>
                   </Grid>
+
+                  {/* Honeypot field - hidden from humans */}
+                  <TextField
+                    {...register('fax')}
+                    autoComplete='off'
+                    style={{
+                      display: 'none',
+                      position: 'absolute',
+                      left: '-5000px',
+                    }}
+                    tabIndex={-1}
+                    aria-hidden='true'
+                  />
+
                   <TextField
                     fullWidth
                     {...register('mensaje')}
@@ -239,24 +261,5 @@ const Contact = () => {
     </Box>
   );
 };
-
-const IconButton = ({ children, sx, href, target }: any) => (
-  <Button
-    href={href}
-    target={target}
-    sx={{
-      minWidth: 48,
-      height: 48,
-      borderRadius: 2,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      p: 0,
-      ...sx,
-    }}
-  >
-    {children}
-  </Button>
-);
 
 export default Contact;

@@ -8,7 +8,7 @@ export interface Project {
   link?: string;
 }
 
-export const projects: Project[] = [
+export const PROJECTS: Project[] = [
   {
     id: '1',
     title: 'Agente IA LogOS',

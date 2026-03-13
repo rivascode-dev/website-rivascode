@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   Box,
   Container,
@@ -11,9 +11,9 @@ import {
   CardActionArea,
   Stack,
 } from '@mui/material';
-import { Smartphone, Monitor, AppWindow } from 'lucide-react';
+import { Monitor, AppWindow } from 'lucide-react';
 import { motion } from 'framer-motion';
-import ProyectsModal from './ProyectsMOdal';
+import ProjectsModal from './ProjectsModal';
 import { brandColor, brandGradient } from '../../theme/theme';
 
 const Proyects = () => {
@@ -135,7 +135,7 @@ const Proyects = () => {
         </Grid>
       </Grid>
 
-      <ProyectsModal
+      <ProjectsModal
         open={modalOpen}
         onClose={() => setModalOpen(false)}
         category={selectedCategory}

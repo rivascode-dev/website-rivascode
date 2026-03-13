@@ -20,7 +20,16 @@ export async function sendEmail(prevState: any, formData: FormData) {
       return { success: false, message: firstError };
     }
 
-    const { nombre, email, mensaje } = validatedFields.data;
+    const { nombre, email, mensaje, fax } = validatedFields.data;
+    
+    // Honeypot validation (bots tend to fill all fields)
+    if (fax) {
+      console.warn('Posible SPAM detectado via Honeypot. Bloqueando envío.');
+      return {
+        success: true,
+        message: '¡Propuesta enviada con éxito! Nos pondremos en contacto pronto.',
+      };
+    }
 
     if (
       !process.env.RESEND_API_KEY ||

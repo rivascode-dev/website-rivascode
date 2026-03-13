@@ -16,7 +16,7 @@ import {
   Button,
 } from '@mui/material';
 import { X, ExternalLink } from 'lucide-react';
-import { projects } from '../../data/projects';
+import { PROJECTS } from '../../data/projects';
 
 interface ProyectsModalProps {
   open: boolean;
@@ -25,7 +25,7 @@ interface ProyectsModalProps {
 }
 
 const ProyectsModal = ({ open, onClose, category }: ProyectsModalProps) => {
-  const filteredProjects = projects.filter((p) => p.category === category);
+  const filteredProjects = PROJECTS.filter((p) => p.category === category);
 
   return (
     <Dialog

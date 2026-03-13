@@ -8,11 +8,27 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'rivascode.dev | Software Engineer & Digital Solutions',
+  title:
+    'rivascode.dev | Soluciones de Software a Medida & Integración de IA Generativa.',
   description:
-    'Portafolio profesional de rivascode.dev - Innovative Tech Solutions, Apps & Websites.',
+    'Portafolio profesional de rivascode.dev - Especialista en potenciar negocios mediante la creación de aplicaciones web escalables.',
   icons: {
     icon: '/assets/logos/logo-rivascode.png',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title:
+      'rivascode.dev | Soluciones de Software a Medida & Integración de IA Generativa.',
+    description:
+      'Portafolio profesional de rivascode.dev - Especialista en potenciar negocios mediante la creación de aplicaciones web escalables.',
+    images: ['/assets/logos/logo-rivascode.png'],
+  },
+  openGraph: {
+    title:
+      'rivascode.dev | Soluciones de Software a Medida & Integración de IA Generativa.',
+    description:
+      'Portafolio profesional de rivascode.dev - Especialista en potenciar negocios mediante la creación de aplicaciones web escalables.',
+    images: ['/assets/logos/logo-rivascode.png'],
   },
 };
 

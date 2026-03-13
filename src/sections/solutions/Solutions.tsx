@@ -10,35 +10,9 @@ import {
   CardContent,
   Stack,
 } from '@mui/material';
-import { Sparkles, Zap, Shield, Rocket } from 'lucide-react';
+import { SOLUTIONS } from '../../data/solutions';
 import { motion } from 'framer-motion';
 import { brandColor, brandGradient } from '../../theme/theme';
-
-const solutions = [
-  {
-    title: 'Desarrollo Ágil',
-    description:
-      'Entregas iterativas y constantes para validar ideas rápidamente.',
-    icon: <Zap size={40} />,
-  },
-  {
-    title: 'Diseño Premium',
-    description:
-      'Interfaces modernas, intuitivas y con una estética de alto nivel.',
-    icon: <Sparkles size={40} />,
-  },
-  {
-    title: 'Escalabilidad',
-    description:
-      'Arquitecturas robustas preparadas para el crecimiento de tu negocio.',
-    icon: <Shield size={40} />,
-  },
-  {
-    title: 'Rendimiento',
-    description: 'Carga ultrarrápida y SEO optimizado desde el primer día.',
-    icon: <Rocket size={40} />,
-  },
-];
 
 const Solutions = () => {
   return (
@@ -87,7 +61,7 @@ const Solutions = () => {
         </Stack>
 
         <Grid container spacing={4}>
-          {solutions.map((solution, index) => (
+          {SOLUTIONS.map((solution, index) => (
             <Grid key={solution.title} size={{ xs: 12, sm: 6, md: 3 }}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -106,7 +80,7 @@ const Solutions = () => {
                         justifyContent: 'center',
                       }}
                     >
-                      {solution.icon}
+                      <solution.icon size={40} />
                     </Box>
                     <Typography
                       variant='h6'

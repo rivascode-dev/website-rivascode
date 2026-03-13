@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# rivascode.dev - Personal Portfolio & AI Solutions
 
-## Getting Started
+Bienvenido al repositorio oficial de **rivascode.dev**, un sitio web profesional diseñado para mostrar soluciones tecnológicas avanzadas, con un enfoque especial en la integración de Inteligencia Artificial (IA), desarrollo IIoT y diseño de experiencias premium.
 
-First, run the development server:
+![rivascode.dev logo](/public/assets/logos/logo-rivascode-small.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Propósito del Proyecto
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Este sitio no solo sirve como portafolio personal, sino como una vitrina de capacidades técnicas en:
+- **Desarrollo Web Moderno**: Interfaces rápidas, seguras y altamente responsivas.
+- **Inteligencia Artificial Generativa**: Implementación de arquitecturas RAG (Retrieval-Augmented Generation) para optimizar la interacción con el usuario.
+- **Soluciones Industriales (IIoT)**: Plataformas avanzadas para el monitoreo y control en tiempo real (LogOS).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Stack Tecnológico
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+El proyecto está construido sobre un stack de última generación, optimizado para el rendimiento y la escalabilidad:
 
-## Learn More
+- **Core**: [Next.js 16 (Turbopack)](https://nextjs.org/) & [React 19](https://react.dev/)
+- **Styling & UI**: [Material UI (MUI)](https://mui.com/) & [Framer Motion](https://www.framer.com/motion/)
+- **Lenguaje**: [TypeScript](https://www.typescriptlang.org/)
+- **Manejo de Formularios**: [React Hook Form](https://react-hook-form.com/) & [Zod](https://zod.dev/)
+- **Email Service**: [Resend](https://resend.com/)
+- **Iconografía**: [Lucide React](https://lucide.dev/)
 
-To learn more about Next.js, take a look at the following resources:
+## ✨ Características Principales
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Diseño Premium**: Estética moderna con efectos de glassmorphism, gradientes vibrantes y micro-animaciones fluidas.
+2. **Navegación Inteligente**: Menú responsive optimizado para dispositivos móviles con gestión de estado avanzada.
+3. **Formulario de Contacto Resiliente**: Validación estricta con Zod y envío de correos automatizado a través de Server Actions.
+4. **Sección de Proyectos Dinámica**: Filtrado y visualización de proyectos con modales informativos detallados.
+5. **Arquitectura RAG**: Demostración de capacidades de IA integradas directamente en el flujo de usuario.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📦 Instalación y Desarrollo
 
-## Deploy on Vercel
+Sigue estos pasos para ejecutar el proyecto localmente:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Clonar el repositorio:**
+   ```bash
+   git clone https://github.com/rivascode-dev/website-rivascode.git
+   cd website-rivascode
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. **Instalar dependencias:**
+   ```bash
+   pnpm install
+   # o alternativamente: npm install
+   ```
+
+3. **Configurar variables de entorno:**
+   Crea un archivo `.env.local` en la raíz del proyecto y añade tus llaves:
+   ```env
+   RESEND_API_KEY=re_your_api_key
+   ```
+
+4. **Iniciar el servidor de desarrollo:**
+   ```bash
+   pnpm dev
+   ```
+   El sitio estará disponible en [http://localhost:3000](http://localhost:3000).
+
+## 🏗️ Estructura del Proyecto
+
+- `src/sections/`: Componentes principales de la página agrupados por secciones (Hero, Proyects, Contact, etc.).
+- `src/data/`: Fuente de verdad centralizada para proyectos, tecnologías y datos de contacto.
+- `src/actions/`: Server Actions para lógica fuera del cliente (ej. `sendEmail.ts`).
+- `src/schemas/`: Esquemas de validación de datos con Zod.
+- `src/theme/`: Configuración personalizada del tema de Material UI.
+
+## 📄 Licencia
+
+Este proyecto es privado y todos los derechos están reservados.
+
+---
+Desarrollado con ❤️ por **[rivascode.dev](https://rivascode.dev)**

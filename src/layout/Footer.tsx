@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import {
   Box,
   Container,
@@ -9,7 +8,7 @@ import {
   Stack,
   IconButton,
 } from '@mui/material';
-import { socialLinks } from '@/data/contact';
+import { SOCIAL_LINKS } from '@/data/contact';
 import Image from 'next/image';
 
 const Footer = () => {
@@ -43,11 +42,12 @@ const Footer = () => {
             spacing={2}
             justifyContent={{ xs: 'center', md: 'flex-end' }}
           >
-            {socialLinks.map((social, index) => (
+            {SOCIAL_LINKS.map((social, index) => (
               <IconButton
                 key={index}
                 color='primary'
-                href={social.href}
+                component='a'
+                href={social.href || '#'}
                 target='_blank'
               >
                 <social.icon size={20} />

@@ -10,6 +10,8 @@ export const emailSchema = z.object({
   mensaje: z
     .string()
     .min(10, { message: 'El mensaje debe tener al menos 10 caracteres.' }),
+  // Honeypot field for anti-spam
+  fax: z.string().optional(),
 });
 
 // Inferimos el tipo de TypeScript automáticamente desde el esquema.

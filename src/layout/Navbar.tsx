@@ -17,7 +17,7 @@ import {
   Divider,
 } from '@mui/material';
 import { Menu, X } from 'lucide-react';
-import { socialLinks } from '@/data/contact';
+import { SOCIAL_LINKS } from '@/data/contact';
 import Image from 'next/image';
 import { alpha } from '@mui/material/styles';
 
@@ -100,11 +100,12 @@ const Navbar = () => {
       <Divider sx={{ my: 3, borderColor: alpha('#fff', 0.1) }} />
 
       <Stack direction='row' spacing={2} justifyContent='center' sx={{ mb: 2 }}>
-        {socialLinks.map((social, index) => (
+        {SOCIAL_LINKS.map((social, index) => (
           <IconButton
             key={index}
             color='primary'
-            href={social.href}
+            component='a'
+            href={social.href || '#'}
             target='_blank'
             sx={{
               backgroundColor: alpha('#5ce1e6', 0.1),
@@ -130,7 +131,6 @@ const Navbar = () => {
   return (
     <AppBar
       position='sticky'
-      top={0}
       color='transparent'
       elevation={0}
       sx={{

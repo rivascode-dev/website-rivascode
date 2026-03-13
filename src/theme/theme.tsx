@@ -3,10 +3,6 @@
 import { createTheme, alpha } from '@mui/material/styles';
 import { red } from '@mui/material/colors';
 
-// colores de la marca
-// degradado lineal de #8c52ff a #5ce1e6
-// brand #5ce1e6
-
 export const brandColor = '#5ce1e6';
 export const brandGradient = 'linear-gradient(to right, #8c52ff, #5ce1e6)';
 
@@ -214,8 +210,7 @@ const getTheme = (mode: 'light' | 'dark') =>
         },
       },
       MuiTypography: {
-        styleOverrides: {
-        },
+        styleOverrides: {},
       },
     },
   });

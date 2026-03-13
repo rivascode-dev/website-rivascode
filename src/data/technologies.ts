@@ -3,7 +3,7 @@ export interface Technology {
   icon: string;
 }
 
-export const technologies: Technology[] = [
+export const TECHNOLOGIES: Technology[] = [
   { name: 'React', icon: 'react' },
   { name: 'Next.js', icon: 'nextjs' },
   { name: 'JavaScript', icon: 'javascript' },

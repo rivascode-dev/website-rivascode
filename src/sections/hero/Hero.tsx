@@ -2,7 +2,6 @@
 import { Box, Container, Typography, Button, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
 import { brandGradient } from '../../theme/theme';
-
 import NetworkBackground from '../../components/NetworkBackground';
 
 const Hero = () => {
