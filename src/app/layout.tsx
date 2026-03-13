@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description:
     'Portafolio profesional de rivascode.dev - Especialista en potenciar negocios mediante la creación de aplicaciones web escalables.',
   icons: {
-    icon: '/assets/logos/logo-rivascode.png',
+    icon: '/assets/logos/logo-rivascode-cuadrado-small.png',
   },
   twitter: {
     card: 'summary_large_image',
@@ -21,14 +21,14 @@ export const metadata: Metadata = {
       'rivascode.dev | Soluciones de Software a Medida & Integración de IA Generativa.',
     description:
       'Portafolio profesional de rivascode.dev - Especialista en potenciar negocios mediante la creación de aplicaciones web escalables.',
-    images: ['/assets/logos/logo-rivascode.png'],
+    images: ['/assets/logos/logo-rivascode-cuadrado-small.png'],
   },
   openGraph: {
     title:
       'rivascode.dev | Soluciones de Software a Medida & Integración de IA Generativa.',
     description:
       'Portafolio profesional de rivascode.dev - Especialista en potenciar negocios mediante la creación de aplicaciones web escalables.',
-    images: ['/assets/logos/logo-rivascode.png'],
+    images: ['/assets/logos/logo-rivascode-cuadrado-small.png'],
   },
 };
 
