@@ -31,15 +31,17 @@ const Navbar = () => {
     { label: 'Tecnologías', href: '#tecnologias' },
   ];
 
-  const toggleDrawer = (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
-    if (
-      event.type === 'keydown' &&
-      ((event as React.KeyboardEvent).key === 'Tab' || (event as React.KeyboardEvent).key === 'Shift')
-    ) {
-      return;
-    }
-    setIsDrawerOpen(open);
-  };
+  const toggleDrawer =
+    (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
+      if (
+        event.type === 'keydown' &&
+        ((event as React.KeyboardEvent).key === 'Tab' ||
+          (event as React.KeyboardEvent).key === 'Shift')
+      ) {
+        return;
+      }
+      setIsDrawerOpen(open);
+    };
 
   const drawerContent = (
     <Box
@@ -54,7 +56,14 @@ const Navbar = () => {
       }}
       role='presentation'
     >
-      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 4 }}>
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          mb: 4,
+        }}
+      >
         <Image
           src='/assets/logos/logo-rivascode-small.png'
           alt='rivascode.dev logo'
@@ -122,8 +131,11 @@ const Navbar = () => {
       </Stack>
       <Box sx={{ textAlign: 'center' }}>
         <ListItemText
-          secondary='rivascode.dev'
-          secondaryTypographyProps={{ variant: 'caption', color: 'text.secondary' }}
+          secondary='Armando Rivas | rivascode.dev'
+          secondaryTypographyProps={{
+            variant: 'caption',
+            color: 'text.secondary',
+          }}
         />
       </Box>
     </Box>
@@ -147,7 +159,12 @@ const Navbar = () => {
           <Box
             component='a'
             href='#hero'
-            sx={{ display: 'flex', alignItems: 'center', cursor: 'pointer', textDecoration: 'none' }}
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              cursor: 'pointer',
+              textDecoration: 'none',
+            }}
           >
             <Image
               src='/assets/logos/logo-rivascode-small.png'
