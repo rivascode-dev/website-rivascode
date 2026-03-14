@@ -69,7 +69,7 @@ const Footer = () => {
       >
         <Typography variant='caption' color='text.secondary'>
           © {new Date().getFullYear()} rivascode.dev. Todos los derechos
-          reservados.
+          reservados. Diseñado y desarrollado por Armando Rivas.
         </Typography>
       </Box>
     </Container>
