@@ -45,9 +45,20 @@ export const PROJECTS: Project[] = [
 
   {
     id: '4',
-    title: 'logOS',
+    title: 'JavaScript Chile',
     description:
-      'Website desarrollado para LogOS es una plataforma IIoT de vanguardia diseñada para el monitoreo y control en tiempo real en entornos industriales.  ',
+      'Website desarrollado para JS Chile, comunidad de desarrolladores apasionados por la tecnología de la cual formo parte como Staff  ',
+    image: '/assets/projects/websites/jschile.png',
+    category: 'Website',
+    technologies: ['Next.js', 'React', 'MUI'],
+    link: 'https://jschile.org/',
+  },
+
+  {
+    id: '5',
+    title: 'LogOS',
+    description:
+      'Website desarrollado para LogOS es una plataforma IoT de vanguardia diseñada para el monitoreo y control en tiempo real en entornos industriales.  ',
     image: '/assets/projects/websites/logos-website.png',
     category: 'Website',
     technologies: ['Next.js', 'React', 'MUI', 'LangChain', 'RAG', 'Velite'],
@@ -65,10 +76,10 @@ export const PROJECTS: Project[] = [
     link: 'https://www.envasadosh2o.com/',
   },
   {
-    id: '5',
+    id: '7',
     title: 'Salmed',
     description:
-      'Website desarrollado para una empresa de salud, con un diseño moderno y funcional.  Este website incluye un agente conversacional con IA Generativa (RAG) para optimizar la interacción con el usuario y automatizar la respuesta a consultas frecuentes. ',
+      'Website desarrollado para empresa de salud, con diseño moderno y funcional. Incluye un agente (RAG) para automatizar la respuesta a consultas frecuentes. ',
     image: '/assets/projects/websites/salmed-infochat.png',
     category: 'Website',
     technologies: ['Next.js', 'React', 'Xenova/transformers', 'RAG', 'MUI'],
