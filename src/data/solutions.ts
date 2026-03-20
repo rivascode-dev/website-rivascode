@@ -1,4 +1,4 @@
-import { Zap, Sparkles, Shield, Rocket, type LucideIcon } from 'lucide-react';
+import { Sparkles, Shield, Rocket, Bot, type LucideIcon } from 'lucide-react';
 
 export interface Solution {
   title: string;
@@ -8,13 +8,7 @@ export interface Solution {
 
 export const SOLUTIONS: Solution[] = [
   {
-    title: 'Desarrollo Ágil',
-    description:
-      'Entregas iterativas y constantes para validar ideas rápidamente.',
-    icon: Zap,
-  },
-  {
-    title: 'Diseño Premium',
+    title: 'Diseño UI/UX',
     description:
       'Interfaces modernas, intuitivas y con una estética de alto nivel.',
     icon: Sparkles,
@@ -24,6 +18,12 @@ export const SOLUTIONS: Solution[] = [
     description:
       'Arquitecturas robustas preparadas para el crecimiento de tu negocio.',
     icon: Shield,
+  },
+  {
+    title: 'Agentes de IA',
+    description:
+      'Agentes conversacionales para mejorar la eficiencia de tu negocio.',
+    icon: Bot,
   },
   {
     title: 'Rendimiento',

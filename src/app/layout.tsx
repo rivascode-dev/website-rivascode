@@ -8,6 +8,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://rivascode.dev'),
+  alternates: {
+    canonical: '/',
+    languages: {
+      'es-CL': '/es-CL',
+    },
+  },
   title: 'Armando Rivas | rivascode.dev - Soluciones de Software e IA',
   description:
     'Portafolio profesional de Armando Rivas - Especialista en potenciar negocios mediante la creación de aplicaciones web escalables.',

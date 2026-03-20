@@ -55,7 +55,7 @@ const Hero = () => {
               color='text.secondary'
               sx={{ fontSize: '1.25rem', lineHeight: 1.6 }}
             >
-              Soluciones de Software a Medida & Integración de IA Generativa.
+              Soluciones de Software a Medida e Integración de IA Generativa.
               Especialista en potenciar negocios mediante la creación de
               aplicaciones web escalables.
             </Typography>
