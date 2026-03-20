@@ -118,7 +118,10 @@ const Contact = () => {
         <Grid container spacing={6}>
           <Grid size={{ xs: 12, md: 5 }}>
             <Stack spacing={4}>
-              <Typography variant='h3' sx={{ mb: 2, fontSize: '1.5rem', fontWeight: 700 }}>
+              <Typography
+                variant='h3'
+                sx={{ mb: 2, fontSize: '1.5rem', fontWeight: 700 }}
+              >
                 Información de Contacto
               </Typography>
               {CONTACT_INFO.map((info) => (
@@ -139,7 +142,11 @@ const Contact = () => {
                     <info.icon size={24} />
                   </Box>
                   <Box>
-                    <Typography variant='subtitle2' component='span' color='text.secondary'>
+                    <Typography
+                      variant='subtitle2'
+                      component='span'
+                      color='text.secondary'
+                    >
                       {info.label}
                     </Typography>
                     <Typography variant='body1' sx={{ fontWeight: 600 }}>
@@ -162,7 +169,7 @@ const Contact = () => {
                       backgroundColor: alpha('#5ce1e6', 0.1),
                       '&:hover': {
                         backgroundColor: 'primary.main',
-                        color: '#fff',
+                        color: '#000',
                       },
                     }}
                   >

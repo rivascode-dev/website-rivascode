@@ -38,7 +38,7 @@ export const PROJECTS: Project[] = [
     image: '/assets/projects/apps/mentor-startup.png',
     category: 'App',
     technologies: ['Next.js', 'React', 'LangChain', 'MUI'],
-    link: 'https://app-langchain-rag-html.vercel.app/',
+    link: 'https://mentor-startup.vercel.app/',
   },
 
   //websites
