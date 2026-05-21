@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import { Box } from '@mui/material';
 
 interface NetworkBackgroundProps {
   particleCount?: number; // Cantidad total de nodos o partículas
@@ -17,12 +16,12 @@ interface NetworkBackgroundProps {
 const NetworkBackground: React.FC<NetworkBackgroundProps> = ({
   particleCount, // Se manejará dinámicamente si no se provee
   particleSize = 3.5,
-  particleColor = 'rgba(0, 217, 255, 0.5)',
-  lineColor = 'rgba(0, 217, 255, 0.5)',
-  connectionDistance = 150,
-  moveSpeed = 1,
+  particleColor = 'rgba(92, 225, 230, 0.76)', // Cyan translúcido
+  lineColor = 'rgba(92, 225, 230, 0.76)', // Cyan translúcido
+  connectionDistance = 140,
+  moveSpeed = 0.8,
   interactive = true,
-  mouseRadius = 150,
+  mouseRadius = 140,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particles = useRef<any[]>([]);
@@ -38,11 +37,12 @@ const NetworkBackground: React.FC<NetworkBackgroundProps> = ({
     let animationFrameId: number;
 
     const handleResize = () => {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
+      // Configurar las dimensiones físicas basadas en el tamaño de renderizado real
+      canvas.width = canvas.clientWidth;
+      canvas.height = canvas.clientHeight;
 
-      const isMobile = window.innerWidth < 600;
-      const count = particleCount || (isMobile ? 80 : 180);
+      const isMobile = window.innerWidth < 768;
+      const count = particleCount || (isMobile ? 50 : 120);
 
       if (particles.current.length === 0 || particles.current.length !== count) {
         initParticles(count);
@@ -57,7 +57,7 @@ const NetworkBackground: React.FC<NetworkBackgroundProps> = ({
           y: Math.random() * canvas.height,
           vx: (Math.random() - 0.5) * moveSpeed * 2,
           vy: (Math.random() - 0.5) * moveSpeed * 2,
-          size: Math.random() * particleSize + 1,
+          size: Math.random() * particleSize + 0.8,
         });
       }
     };
@@ -107,12 +107,12 @@ const NetworkBackground: React.FC<NetworkBackgroundProps> = ({
             const angle = Math.atan2(dy, dx);
             const force = (mouseRadius - dist) / mouseRadius;
 
-            p.x -= Math.cos(angle) * force * 3;
-            p.y -= Math.sin(angle) * force * 3;
+            p.x -= Math.cos(angle) * force * 2.5;
+            p.y -= Math.sin(angle) * force * 2.5;
           }
         }
 
-        // Dibujar nodo
+        // Dibujar nodo con brillo suave
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fillStyle = particleColor;
@@ -130,7 +130,7 @@ const NetworkBackground: React.FC<NetworkBackgroundProps> = ({
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
             ctx.strokeStyle = lineColor;
-            ctx.lineWidth = (1 - dist / connectionDistance) * 0.5;
+            ctx.lineWidth = (1 - dist / connectionDistance) * 0.7;
             ctx.stroke();
           }
         }
@@ -164,7 +164,7 @@ const NetworkBackground: React.FC<NetworkBackgroundProps> = ({
       window.removeEventListener('mouseleave', handleMouseLeave);
     };
   }, [
-    particleCount, // Re-inicia posición solo si cambia el número de partículas
+    particleCount,
     particleSize,
     particleColor,
     lineColor,
@@ -175,19 +175,9 @@ const NetworkBackground: React.FC<NetworkBackgroundProps> = ({
   ]);
 
   return (
-    <Box
-      component='canvas'
+    <canvas
       ref={canvasRef}
-      sx={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        zIndex: 0,
-        pointerEvents: 'none',
-        opacity: 1, // Corregido de 2.8 a 1 (máximo válido)
-      }}
+      className='absolute top-0 left-0 w-full h-full z-0 pointer-events-none opacity-80'
     />
   );
 };

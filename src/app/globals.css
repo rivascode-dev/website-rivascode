@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+:root {
+  --background: 195 38% 5%;       /* #090E10 - Dark Blue/Grey */
+  --foreground: 210 20% 98%;      /* Light text */
+  --card: 204 26% 10%;            /* #131B20 - Dark card background */
+  --card-foreground: 210 20% 98%;
+  --border: 204 15% 20%;          /* Dark border */
+  --input: 204 15% 20%;
+  --ring: 182 75% 63%;            /* Primary cyan ring */
+  
+  /* Brand colors */
+  --primary: 182 75% 63%;         /* #5ce1e6 - Cyan */
+  --primary-foreground: 195 38% 5%;
+  --secondary: 260 100% 66%;      /* #8c52ff - Purple */
+  --secondary-foreground: 210 20% 98%;
+  
+  --muted: 204 15% 15%;
+  --muted-foreground: 204 10% 65%;
+  --accent: 182 75% 63%;
+  --accent-foreground: 195 38% 5%;
+  --radius: 1rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom visual utilities for a premium look */
+.text-brand-gradient {
+  background: linear-gradient(135deg, #8c52ff 0%, #5ce1e6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-brand-gradient {
+  background: linear-gradient(135deg, #8c52ff 0%, #5ce1e6 100%);
+}
+
+.bg-glass {
+  background-color: rgba(9, 14, 16, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.bg-glass-card {
+  background: rgba(19, 27, 32, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Animations and decorative glows */
+@keyframes pulseGlow {
+  0% {
+    transform: scale(0.98);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.02);
+    opacity: 0.6;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite alternate;
+}

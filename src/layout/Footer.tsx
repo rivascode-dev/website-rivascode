@@ -1,78 +1,52 @@
 'use client';
 
-import {
-  Box,
-  Container,
-  Typography,
-  Grid,
-  Stack,
-  IconButton,
-} from '@mui/material';
+import React from 'react';
 import { SOCIAL_LINKS } from '@/data/contact';
 import Image from 'next/image';
 
 const Footer = () => {
   return (
-    <Container maxWidth='lg'>
-      <Grid
-        container
-        spacing={4}
-        justifyContent='space-between'
-        alignItems='center'
-      >
-        <Grid size={{ xs: 12, md: 4 }}>
-          <Box sx={{ mb: 2 }}>
+    <div className='max-w-7xl mx-auto w-full'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-8 justify-between items-center'>
+        {/* Left column: Logo & Description */}
+        <div>
+          <div className='mb-4 relative w-[180px] h-[32px]'>
             <Image
               src='/assets/logos/logo-rivascode-small.png'
               alt='rivascode.dev logo'
-              width={200}
-              height={35}
-              style={{ objectFit: 'contain' }}
+              fill
+              className='object-contain'
             />
-          </Box>
-          <Typography variant='body2' color='text.secondary'>
-            Transformando ideas complejas en soluciones digitales elegantes y
-            eficientes.
-          </Typography>
-        </Grid>
+          </div>
+          <p className='text-sm text-muted-foreground max-w-sm leading-relaxed'>
+            Transformando ideas complejas en soluciones digitales elegantes y eficientes. Especializado en ingeniería de software e integración de Inteligencia Artificial.
+          </p>
+        </div>
 
-        <Grid size={{ xs: 12, md: 4 }}>
-          <Stack
-            direction='row'
-            spacing={2}
-            justifyContent={{ xs: 'center', md: 'flex-end' }}
-          >
-            {SOCIAL_LINKS.map((social, index) => (
-              <IconButton
-                key={index}
-                color='primary'
-                component='a'
-                aria-label={social.label}
-                href={social.href || '#'}
-                target='_blank'
-              >
-                <social.icon size={20} />
-              </IconButton>
-            ))}
-          </Stack>
-        </Grid>
-      </Grid>
+        {/* Right column: Social icons */}
+        <div className='flex justify-start md:justify-end gap-3'>
+          {SOCIAL_LINKS.map((social, index) => (
+            <a
+              key={index}
+              href={social.href || '#'}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='p-3 rounded-xl border border-border bg-card/40 text-muted-foreground hover:text-primary hover:border-primary/40 hover:shadow-[0_0_15px_rgba(92,225,230,0.15)] transition-all duration-300'
+              aria-label={social.label}
+            >
+              <social.icon size={20} />
+            </a>
+          ))}
+        </div>
+      </div>
 
-      <Box
-        sx={{
-          mt: 6,
-          pt: 3,
-          borderTop: '1px solid',
-          borderColor: 'divider',
-          textAlign: 'center',
-        }}
-      >
-        <Typography variant='caption' color='text.secondary'>
-          © {new Date().getFullYear()} rivascode.dev. Todos los derechos
-          reservados. Diseñado y desarrollado por Armando Rivas.
-        </Typography>
-      </Box>
-    </Container>
+      {/* Copyright text at the bottom */}
+      <div className='mt-10 pt-6 border-t border-border/40 text-center'>
+        <p className='text-xs text-muted-foreground'>
+          © {new Date().getFullYear()} rivascode.dev. Todos los derechos reservados. Diseñado y desarrollado por Armando Rivas.
+        </p>
+      </div>
+    </div>
   );
 };
 

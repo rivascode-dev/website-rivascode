@@ -8,7 +8,7 @@ export const TECHNOLOGIES: Technology[] = [
   { name: 'Next.js', icon: 'nextjs' },
   { name: 'JavaScript', icon: 'javascript' },
   { name: 'TypeScript', icon: 'typescript' },
-  { name: 'Material UI', icon: 'mui' },
+  { name: 'Tailwind CSS', icon: 'tailwindcss' },
   { name: 'Node.js', icon: 'nodejs' },
   { name: 'LangChain', icon: 'langchain' },
   { name: 'Git', icon: 'git' },
