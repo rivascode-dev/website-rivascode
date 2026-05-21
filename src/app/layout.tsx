@@ -46,10 +46,8 @@ export default function RootLayout({
   return (
     <html lang='es' className='scroll-smooth'>
       <body className={`${inter.variable} antialiased bg-background text-foreground min-h-screen flex flex-col relative`}>
-        {/* Navbar sticky on top */}
-        <header className='sticky top-0 z-50 w-full'>
-          <Navbar />
-        </header>
+        {/* Navbar fixed on top */}
+        <Navbar />
 
         {/* Main Content Area */}
         <main className='flex-grow relative z-10'>

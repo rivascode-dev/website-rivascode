@@ -30,60 +30,62 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full transition-all duration-300 z-50 border-b ${
-        isScrolled
-          ? 'bg-background/80 backdrop-blur-md border-border/60 py-3 shadow-[0_8px_30px_rgb(0,0,0,0.3)]'
-          : 'bg-transparent border-transparent py-5'
-      }`}
-    >
-      <div className='max-w-7xl mx-auto px-6 md:px-8 lg:px-12 flex justify-between items-center'>
-        {/* Logo */}
-        <a href='#hero' className='flex items-center outline-none group'>
-          <div className='relative w-[180px] h-[32px] md:w-[200px] md:h-[35px] transition-transform duration-300 group-hover:scale-[1.02]'>
-            <Image
-              src='/assets/logos/logo-rivascode-small.png'
-              alt='rivascode.dev logo'
-              fill
-              className='object-contain'
-              priority
-            />
-          </div>
-        </a>
-
-        {/* Desktop Navigation Links */}
-        <div className='hidden md:flex items-center space-x-1 lg:space-x-2'>
-          {navItems.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className='relative px-4 py-2 text-[0.95rem] font-medium text-muted-foreground hover:text-primary transition-colors duration-300 group'
-            >
-              {item.label}
-              <span className='absolute bottom-1 left-4 right-4 h-[2px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center' />
-            </a>
-          ))}
-          <a
-            href='#contacto'
-            className='ml-4 px-6 py-2.5 rounded-xl font-semibold bg-brand-gradient text-primary-foreground transition-all duration-300 shadow-[0_4px_20px_rgba(92,225,230,0.25)] hover:shadow-[0_4px_30px_rgba(140,82,255,0.4)] hover:scale-[1.03] active:scale-95 text-center'
-          >
-            Contacto
+    <>
+      <nav
+        className={`fixed top-0 left-0 w-full transition-all duration-300 z-50 border-b ${
+          isScrolled
+            ? 'bg-background/95 backdrop-blur-md border-border/60 py-3 shadow-[0_8px_30px_rgba(0,0,0,0.4)]'
+            : 'bg-background/90 backdrop-blur-md border-border/30 py-4 shadow-[0_4px_20px_rgba(0,0,0,0.2)]'
+        }`}
+      >
+        <div className='max-w-7xl mx-auto px-6 md:px-8 lg:px-12 flex justify-between items-center'>
+          {/* Logo */}
+          <a href='#hero' className='flex items-center outline-none group'>
+            <div className='relative w-[180px] h-[32px] md:w-[200px] md:h-[35px] transition-transform duration-300 group-hover:scale-[1.02]'>
+              <Image
+                src='/assets/logos/logo-rivascode-small.png'
+                alt='rivascode.dev logo'
+                fill
+                className='object-contain'
+                priority
+              />
+            </div>
           </a>
+
+          {/* Desktop Navigation Links */}
+          <div className='hidden md:flex items-center space-x-1 lg:space-x-2'>
+            {navItems.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className='relative px-4 py-2 text-[0.95rem] font-medium text-muted-foreground hover:text-primary transition-colors duration-300 group'
+              >
+                {item.label}
+                <span className='absolute bottom-1 left-4 right-4 h-[2px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center' />
+              </a>
+            ))}
+            <a
+              href='#contacto'
+              className='ml-4 px-6 py-2.5 rounded-xl font-semibold bg-brand-gradient text-primary-foreground transition-all duration-300 shadow-[0_4px_20px_rgba(92,225,230,0.25)] hover:shadow-[0_4px_30px_rgba(140,82,255,0.4)] hover:scale-[1.03] active:scale-95 text-center'
+            >
+              Contacto
+            </a>
+          </div>
+
+          {/* Mobile Menu Toggle Button */}
+          <button
+            onClick={() => setIsDrawerOpen(true)}
+            className='md:hidden p-2 rounded-lg text-muted-foreground hover:text-primary transition-colors focus:outline-none'
+            aria-label='Abrir menú'
+          >
+            <Menu size={26} />
+          </button>
         </div>
+      </nav>
 
-        {/* Mobile Menu Toggle Button */}
-        <button
-          onClick={() => setIsDrawerOpen(true)}
-          className='md:hidden p-2 rounded-lg text-muted-foreground hover:text-primary transition-colors focus:outline-none'
-          aria-label='Abrir menú'
-        >
-          <Menu size={26} />
-        </button>
-      </div>
-
-      {/* Mobile Sidebar / Drawer (Slide-over) */}
+      {/* Mobile Sidebar / Drawer (Slide-over) - Colocado fuera de <nav> para evitar problemas de posicionamiento con backdrop-filter */}
       <div
-        className={`fixed inset-0 z-50 md:hidden transition-all duration-300 ${
+        className={`fixed inset-0 z-[100] md:hidden transition-all duration-300 ${
           isDrawerOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
@@ -163,7 +165,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </nav>
+    </>
   );
 };
 
