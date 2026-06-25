@@ -45,6 +45,28 @@ export const PROJECTS: Project[] = [
 
   {
     id: '4',
+    title: 'Cesar Naim Coach',
+    description:
+      'Website desarrollado para Cesar Naim Coach, coach experto en reprogramacion mental y transformacion personal.',
+    image: '/assets/projects/websites/cesar-naim-coach.png',
+    category: 'Website',
+    technologies: ['Next.js', 'React', 'Tailwind CSS'],
+    link: 'https://cesarnaim.vercel.app/',
+  },
+
+  {
+    id: '5',
+    title: 'Altamira Ductos',
+    description:
+      'Website desarrollado para Altamira Ductos, empresa dedicada a la limpieza, destape y mantenimiento de ductos en comunidades y edificios.',
+    image: '/assets/projects/websites/altamira-ductos.png',
+    category: 'Website',
+    technologies: ['Next.js', 'React', 'Tailwind CSS'],
+    link: 'https://altamiraductos.cl/',
+  },
+
+  {
+    id: '6',
     title: 'JavaScript Chile',
     description:
       'Website desarrollado para JS Chile, comunidad de desarrolladores apasionados por la tecnología de la cual formo parte como Staff  ',
@@ -55,7 +77,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
-    id: '5',
+    id: '7',
     title: 'LogOS',
     description:
       'Website desarrollado para LogOS es una plataforma IoT de vanguardia diseñada para el monitoreo y control en tiempo real en entornos industriales.  ',
@@ -66,7 +88,7 @@ export const PROJECTS: Project[] = [
   },
 
   {
-    id: '6',
+    id: '8',
     title: 'Envasados H2O',
     description:
       'Website desarrollado para una empresa de embotelladora de agua con un diseño moderno y funcional.  ',
@@ -76,7 +98,7 @@ export const PROJECTS: Project[] = [
     link: 'https://www.envasadosh2o.com/',
   },
   {
-    id: '7',
+    id: '9',
     title: 'Salmed',
     description:
       'Website desarrollado para empresa de salud, con diseño moderno y funcional. Incluye un agente (RAG) para automatizar la respuesta a consultas frecuentes. ',

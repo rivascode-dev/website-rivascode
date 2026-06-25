@@ -45,17 +45,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='es' className='scroll-smooth'>
-      <body className={`${inter.variable} antialiased bg-background text-foreground min-h-screen flex flex-col relative`}>
+      <body
+        className={`${inter.variable} antialiased bg-background text-foreground min-h-screen flex flex-col relative`}
+      >
         {/* Navbar fixed on top */}
         <Navbar />
 
         {/* Main Content Area */}
-        <main className='flex-grow relative z-10'>
-          {children}
-        </main>
+        <main className='flex-grow relative z-10'>{children}</main>
 
         {/* Footer Area */}
-        <footer className='relative z-10 w-full px-4 md:px-8 lg:px-24 py-12 border-t border-border bg-card/30 backdrop-blur-sm'>
+        <footer className='relative z-10 w-full px-4 md:px-8 lg:px-24 py-12 border-t border-border backdrop-blur-sm bg-black'>
           <Footer />
         </footer>
       </body>

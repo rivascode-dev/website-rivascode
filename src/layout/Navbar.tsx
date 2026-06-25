@@ -32,11 +32,9 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 w-full transition-all duration-300 z-50 border-b ${
-          isScrolled
-            ? 'bg-background/95 backdrop-blur-md border-border/60 py-3 shadow-[0_8px_30px_rgba(0,0,0,0.4)]'
-            : 'bg-background/90 backdrop-blur-md border-border/30 py-4 shadow-[0_4px_20px_rgba(0,0,0,0.2)]'
-        }`}
+        className={`fixed top-0 left-0 w-full transition-all duration-300 z-50 border-b  bg-black backdrop-blur-md border-border/60 py-3 shadow-[0_8px_30px_rgba(0,0,0,0.4)]'
+
+         }`}
       >
         <div className='max-w-7xl mx-auto px-6 md:px-8 lg:px-12 flex justify-between items-center'>
           {/* Logo */}
@@ -86,7 +84,9 @@ const Navbar = () => {
       {/* Mobile Sidebar / Drawer (Slide-over) - Colocado fuera de <nav> para evitar problemas de posicionamiento con backdrop-filter */}
       <div
         className={`fixed inset-0 z-[100] md:hidden transition-all duration-300 ${
-          isDrawerOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+          isDrawerOpen
+            ? 'opacity-100 pointer-events-auto'
+            : 'opacity-0 pointer-events-none'
         }`}
       >
         {/* Overlay translucido */}

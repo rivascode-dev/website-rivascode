@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const Footer = () => {
   return (
-    <div className='max-w-7xl mx-auto w-full'>
+    <div className='max-w-7xl mx-auto w-full '>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-8 justify-between items-center'>
         {/* Left column: Logo & Description */}
         <div>
@@ -19,7 +19,9 @@ const Footer = () => {
             />
           </div>
           <p className='text-sm text-muted-foreground max-w-sm leading-relaxed'>
-            Transformando ideas complejas en soluciones digitales elegantes y eficientes. Especializado en ingeniería de software e integración de Inteligencia Artificial.
+            Transformando ideas complejas en soluciones digitales elegantes y
+            eficientes. Especializado en ingeniería de software e integración de
+            Inteligencia Artificial.
           </p>
         </div>
 
@@ -43,7 +45,8 @@ const Footer = () => {
       {/* Copyright text at the bottom */}
       <div className='mt-10 pt-6 border-t border-border/40 text-center'>
         <p className='text-xs text-muted-foreground'>
-          © {new Date().getFullYear()} rivascode.dev. Todos los derechos reservados. Diseñado y desarrollado por Armando Rivas.
+          © {new Date().getFullYear()} rivascode.dev. Todos los derechos
+          reservados. Diseñado y desarrollado por Armando Rivas.
         </p>
       </div>
     </div>
